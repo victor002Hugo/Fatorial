@@ -3,9 +3,6 @@ public class TesteFatorial {
 
 
                 Fatorial fat = new Fatorial();
-                int Resultado = fat.calcularFatorialIterativo(0);
-                System.out.println(Resultado);
-                Resultado = fat.calcularFatorialIterativo(4);
-                System.out.println(Resultado);
+                fat.calcularFatorialIterativo(10);
     }
 }
