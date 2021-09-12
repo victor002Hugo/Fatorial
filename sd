@@ -1,0 +1,120 @@
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mindex 77b7cd1..4437cb9 100644[m
+[1m--- a/.idea/modules.xml[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -3,6 +3,7 @@[m
+   <component name="ProjectModuleManager">[m
+     <modules>[m
+       <module fileurl="file://$PROJECT_DIR$/projetoInicial.iml" filepath="$PROJECT_DIR$/projetoInicial.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/teste/teste.iml" filepath="$PROJECT_DIR$/teste/teste.iml" />[m
+     </modules>[m
+   </component>[m
+ </project>[m
+\ No newline at end of file[m
+[1mdiff --git a/src/Fatorial.java b/src/Fatorial.java[m
+[1mindex 02b8270..f940b39 100644[m
+[1m--- a/src/Fatorial.java[m
+[1m+++ b/src/Fatorial.java[m
+[36m@@ -1,11 +1,16 @@[m
+ public class Fatorial {[m
+ [m
+[31m-    public int calcularFatorial(int n){[m
+[32m+[m[32m    public int calcularFatorial(int n)throws IllegalArgumentException{[m
+ [m
+[31m-        int resultado=1;[m
+[31m-        for (int i=2;i<=n;i++){[m
+[31m-            resultado*=i;[m
+[31m-        }[m
+[31m-        return resultado;[m
+[32m+[m[32m      if(n<0){[m
+[32m+[m[32m          throw new IllegalArgumentException("Não existe fatorial para numeros negativos");[m
+[32m+[m[32m          int resultado=1;[m
+[32m+[m[32m          if(n!=0){[m
+[32m+[m[32m              for (int i=2;i<=n;i++){[m
+[32m+[m[32m                  resultado *=i;[m
+[32m+[m[32m              }[m
+[32m+[m[32m          }[m
+[32m+[m[32m          return resultado;[m
+[32m+[m[32m      }[m
+     }[m
+ }[m
+[1mdiff --git a/src/TesteFatorial.java b/src/TesteFatorial.java[m
+[1mindex 432501a..bff52fe 100644[m
+[1m--- a/src/TesteFatorial.java[m
+[1m+++ b/src/TesteFatorial.java[m
+[36m@@ -5,6 +5,11 @@[m [mpublic class TesteFatorial {[m
+ [m
+         int s=5;[m
+ [m
+[31m-        System.out.println(fat.calcularFatorial(s));[m
+[32m+[m[32m        int resultado=(fat.calcularFatorial(0));[m
+[32m+[m
+[32m+[m[32m        System.out.println(resultado);[m
+[32m+[m
+[32m+[m[32m        resultado = fat.calcularFatorial(4);[m
+[32m+[m[32m        System.out.println(resultado);[m
+     }[m
+ }[m
+[1mdiff --git a/src/TesteFatorial11.java b/src/TesteFatorial11.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b9b5b4a[m
+[1m--- /dev/null[m
+[1m+++ b/src/TesteFatorial11.java[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mpublic class TesteFatorial11 {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/TesteFatorial12.java b/src/TesteFatorial12.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b6bcf5f[m
+[1m--- /dev/null[m
+[1m+++ b/src/TesteFatorial12.java[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mpublic class TesteFatorial12 {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/TesteFatorial13.java b/src/TesteFatorial13.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2f51b34[m
+[1m--- /dev/null[m
+[1m+++ b/src/TesteFatorial13.java[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mpublic class TesteFatorial13 {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/TesteFatorialRecursivo.java b/src/TesteFatorialRecursivo.java[m
+[1mindex 98db826..1599f57 100644[m
+[1m--- a/src/TesteFatorialRecursivo.java[m
+[1m+++ b/src/TesteFatorialRecursivo.java[m
+[36m@@ -1,2 +1,6 @@[m
+[31m-public class TesteFatorialRecursivo {[m
+[32m+[m[32mpublic class TesteFatorialRecursivo[m
+[32m+[m[32m{[m
+ }[m
+[41m+[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/teste/src/a.txt b/teste/src/a.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/teste/src/b.txt b/teste/src/b.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/teste/src/c.txt b/teste/src/c.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/teste/teste.iml b/teste/teste.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c90834f[m
+[1m--- /dev/null[m
+[1m+++ b/teste/teste.iml[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="JAVA_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager" inherit-compiler-output="true">[m
+[32m+[m[32m    <exclude-output />[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$">[m
+[32m+[m[32m      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />[m
+[32m+[m[32m    </content>[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
